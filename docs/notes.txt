@@ -1,0 +1,32 @@
+Form with open ID
+
+<html><head><title>Login Page</title></head><h3>Login with OpenID Identity</h3>
+
+<form name='oidf' action='/login/openid' method='POST'>
+ <table>
+    <tr><td>Identity:</td><td><input type='text' size='30' name='openid_identifier'/></td></tr>
+    <tr><td colspan='2'><input name="submit" type="submit" value="Login"/></td></tr>
+  </table>
+    <input name="_csrf" type="hidden" value="0bcf5307-29b1-4596-83da-e50a1b808ab4" />
+</form>
+
+</body></html>
+
+
+
+Form based login
+
+
+<html><head><title>Login Page</title></head><body onload='document.f.username.focus();'>
+<h3>Login with Username and Password</h3>
+
+<form name='f' action='/login' method='POST'>
+ <table>
+    <tr><td>User:</td><td><input type='text' name='username' value=''></td></tr>
+    <tr><td>Password:</td><td><input type='password' name='password'/></td></tr>
+    <tr><td colspan='2'><input name="submit" type="submit" value="Login"/></td></tr>
+    <input name="_csrf" type="hidden" value="6d954ef0-2233-4d7d-8031-60fdd3ae2e4b" />
+  </table>
+</form>
+
+</body></html>

@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.1.8.RELEASE</version>
+		<version>1.2.1.RELEASE</version>
 	</parent>
 
 	<groupId>thedonkey</groupId>
@@ -31,20 +31,34 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-			<scope>compile</scope>
 		</dependency>
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.security.oauth</groupId> -->
-<!-- 			<artifactId>spring-security-oauth2</artifactId> -->
-<!-- 			<version>2.0.0.RC2</version> -->
-<!-- 		</dependency> -->
+		<dependency>
+			<!-- This is a fix for a dependency problem. http://stackoverflow.com/questions/10234201/appengine-error-java-lang-noclassdeffounderror-org-w3c-dom-elementtraversal -->
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>1.4.01</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-openid</artifactId>
+		</dependency>
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.security.oauth</groupId> -->
+		<!-- <artifactId>spring-security-oauth2</artifactId> -->
+		<!-- <version>2.0.0.RC2</version> -->
+		<!-- </dependency> -->
 
 		<dependency>
 			<groupId>org.springframework.plugin</groupId>

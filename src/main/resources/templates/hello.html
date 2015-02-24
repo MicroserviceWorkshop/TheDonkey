@@ -1,0 +1,10 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:tiles="http://www.thymeleaf.org">
+<head>
+<title tiles:fragment="title">Messages : Hello</title>
+</head>
+<body>
+	<h1>Hello</h1>
+	<p th:text="${authentication.name}">name</p>
+</body>
+</html>
