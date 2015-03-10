@@ -112,7 +112,7 @@ public class BookmarkRestControllerTest {
     mockMvc
         .perform(get("/bookmarks/" + this.bookmarkList.get(0).getId()).header("Authorization", basicDigestHeaderValue))
         .andExpect(status().isOk()).andExpect(content().contentType(contentType))
-        .andExpect(jsonPath("$.bookmark.id", is(this.bookmarkList.get(0).getId().intValue())))
+        .andExpect(jsonPath("$.bookmark.id", NumberMatcher.comparesEqualTo(this.bookmarkList.get(0).getId())))
         .andExpect(jsonPath("$.bookmark.uri", is("http://bookmark.com/1/" + userName)))
         .andExpect(jsonPath("$.bookmark.description", is("A description")))
         .andExpect(jsonPath("$._links.self.href", containsString("/bookmarks/" + this.bookmarkList.get(0).getId())));
