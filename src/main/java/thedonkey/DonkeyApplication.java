@@ -22,6 +22,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 
+import com.mangofactory.swagger.plugin.EnableSwagger;
+
 import thedonkey.persistence.Account;
 import thedonkey.persistence.AccountRepository;
 import thedonkey.persistence.Bookmark;
@@ -34,6 +36,7 @@ import thedonkey.util.PasswordHash;
 @Configuration
 @ComponentScan
 @EnableAutoConfiguration
+@EnableSwagger
 public class DonkeyApplication {
   @Bean
   CommandLineRunner init(AccountRepository accountRepository, BookmarkRepository bookmarkRepository) {

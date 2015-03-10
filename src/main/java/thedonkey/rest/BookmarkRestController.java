@@ -20,6 +20,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.wordnik.swagger.annotations.Api;
+import com.wordnik.swagger.annotations.ApiOperation;
+
 import thedonkey.persistence.AccountRepository;
 import thedonkey.persistence.Bookmark;
 import thedonkey.persistence.BookmarkRepository;
@@ -29,6 +32,7 @@ import thedonkey.persistence.BookmarkRepository;
  */
 @RestController
 @RequestMapping("/bookmarks")
+@Api(description="The bookmark API", value = "/bookmarks")
 public class BookmarkRestController {
 
   private final BookmarkRepository bookmarkRepository;
@@ -59,6 +63,7 @@ public class BookmarkRestController {
   }
 
   @RequestMapping(value = "/{bookmarkId}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+  @ApiOperation(value = "Get a specific bookmark", notes="Get a bookmark for the given ID")
   public BookmarkResource readBookmark(@PathVariable Long bookmarkId) {
     String userId = SecurityContextHolder.getContext().getAuthentication().getName();
     this.validateUser(userId);
